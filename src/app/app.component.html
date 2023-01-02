@@ -1,11 +1,7 @@
-<mat-tab-group (selectedTabChange)="getIndex($event)">
-  <mat-tab label="Flipkart">
-    <app-table [tabName]="tabName" [dataSource]="flipKartDataSource"></app-table>
-  </mat-tab>
-  <mat-tab label="Amazon">
-    <app-table [tabName]="tabName" [dataSource]="amazonDataSource"></app-table>
-  </mat-tab>
-  <mat-tab label="Myntra">
-    <app-table [tabName]="tabName" [dataSource]="myntraDataSource"></app-table>
-  </mat-tab>
+<mat-tab-group>
+  <div *ngFor="let item of array,let i = index">
+    <mat-tab label={{item.tabName}}>
+      <app-table [tabName]="item.tabName" [dataSource]="item.itemsArray"></app-table>
+    </mat-tab>
+  </div>
 </mat-tab-group>
